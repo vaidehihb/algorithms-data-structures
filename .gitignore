@@ -73,12 +73,24 @@ fabric.properties
 ### Intellij Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
-# *.iml
+*.iml
 # modules.xml
 # .idea/misc.xml
-# *.ipr
+*.ipr
 
 # Sonarlint plugin
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/intellij
+.idea/
+algorithms-data-structures.iml
+desktop.ini
+src/com/algo/ds/Main.java
+src/com/algo/ds/array/
+src/com/algo/ds/bit_manipulation/
+src/com/algo/ds/dynamic_programming/
+src/com/algo/ds/linkedlist/
+src/com/algo/ds/math_logic/
+src/com/algo/ds/sorting_searching/
+src/com/algo/ds/stacks_queues/
+src/com/algo/ds/tree_graphs/
