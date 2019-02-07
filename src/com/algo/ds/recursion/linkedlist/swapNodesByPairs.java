@@ -20,13 +20,6 @@ public class swapNodesByPairs {
         return currentHead;
     }
 
-    public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
-        LinkedList<Integer> linkedList = new LinkedList<>(list);
-        LinkedListNode head = swapPairs(linkedList.getHead());
-        printLinkedList(head);
-    }
-
     public static void printLinkedList(LinkedListNode head){
         StringBuilder sb = new StringBuilder();
         while(head != null){
