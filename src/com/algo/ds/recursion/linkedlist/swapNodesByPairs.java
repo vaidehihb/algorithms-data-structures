@@ -19,14 +19,4 @@ public class swapNodesByPairs {
         head.setNext(swapPairs(nextHead));
         return currentHead;
     }
-
-    public static void printLinkedList(LinkedListNode head){
-        StringBuilder sb = new StringBuilder();
-        while(head != null){
-            sb.append(head.getVal());
-            sb.append("->");
-            head = head.getNext();
-        }
-        System.out.println(sb.toString());
-    }
 }
