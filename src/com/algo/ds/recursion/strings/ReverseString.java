@@ -1,7 +1,7 @@
 package com.algo.ds.recursion.strings;
 
 public class ReverseString {
-    public static char[] reverseString(char[] s) {
+    public static char[] reverseStringBySwap(char[] s) {
         if(s.length <= 1){
             return s;
         }
@@ -16,4 +16,20 @@ public class ReverseString {
         s[end] = temp;
         helper(s, ++start, --end);
     }
+
+    public static char[] reverseString(char[] s) {
+        if(s.length <= 1){
+            return s;
+        }
+        StringBuilder sb = new StringBuilder();
+        helper(sb, s, 0);
+        return sb.toString().toCharArray();
+    }
+
+    public static void helper(StringBuilder sb, char[] s, int index){
+        if(index >= s.length) return;
+        helper(sb, s, index+1);
+        sb.append(s[index]);
+    }
+
 }
