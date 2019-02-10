@@ -1,4 +1,6 @@
-package com.algo.ds.sorting_searching.binarysearch;
+package com.algo.ds.sorting_searching.binarysearch.template1;
+
+import com.algo.ds.sorting_searching.binarysearch.template1.BinarySearch;
 
 // binary search in rotated array
 public class PivotedBinarySearch {

@@ -1,4 +1,4 @@
-package com.algo.ds.sorting_searching.binarysearch;
+package com.algo.ds.sorting_searching.binarysearch.template1;
 
 public class MedianOfTwoSortedArrays {
     public static double findMedianOfTwoSortedArrays(int[] arr1, int[] arr2){

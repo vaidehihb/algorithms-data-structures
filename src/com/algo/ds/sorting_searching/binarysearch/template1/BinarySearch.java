@@ -1,4 +1,4 @@
-package com.algo.ds.sorting_searching.binarysearch;
+package com.algo.ds.sorting_searching.binarysearch.template1;
 
 public class BinarySearch {
     public static int binarySearch(int[] arr, int target){
