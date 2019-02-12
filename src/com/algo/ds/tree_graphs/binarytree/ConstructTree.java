@@ -16,7 +16,7 @@ public class ConstructTree<T> {
         return constructPostOrderHelper(inorder, postorder, 0, inorder.length - 1, n-1, inorderMap);
     }
 
-    public BinaryTreeNode<T> constructPostOrderHelper(T[] inorder, T[] preorder, int inStart, int inEnd, int postEnd, Map<T,Integer> inorderMap){
+    private BinaryTreeNode<T> constructPostOrderHelper(T[] inorder, T[] preorder, int inStart, int inEnd, int postEnd, Map<T,Integer> inorderMap){
         if(inStart > inEnd) return null;
         BinaryTreeNode<T> root = new BinaryTreeNode<>(preorder[postEnd]);
         int rootIndex = inorderMap.get(preorder[postEnd]);
@@ -34,7 +34,7 @@ public class ConstructTree<T> {
         return constructPreOrderHelper(inorder, preorder, 0, inorder.length - 1, 0, inorderMap);
     }
 
-    public BinaryTreeNode<T> constructPreOrderHelper(T[] inorder, T[] preorder, int inStart, int inEnd, int preStart, Map<T,Integer> inorderMap){
+    private BinaryTreeNode<T> constructPreOrderHelper(T[] inorder, T[] preorder, int inStart, int inEnd, int preStart, Map<T,Integer> inorderMap){
         if(inStart > inEnd) return null;
         BinaryTreeNode<T> root = new BinaryTreeNode<>(preorder[preStart]);
         int rootIndex = inorderMap.get(preorder[preStart]);
