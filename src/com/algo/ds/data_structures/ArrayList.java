@@ -1,6 +1,12 @@
 package com.algo.ds.data_structures;
 
-public class ArrayList<T> {
+import com.algo.ds.data_structures.interfaces.IList;
+
+import java.util.Arrays;
+import java.util.List;
+
+@SuppressWarnings("unchecked")
+public class ArrayList<T> implements IList<T> {
     private Object[] data;
     private int size = 0;
     private static final int maxCapacity = 10;
@@ -13,9 +19,11 @@ public class ArrayList<T> {
         this.data = new Object[length];
     }
 
-    public void add(T t){
+    @Override
+    public int add(T t){
         validateCapacity();
         data[size++] = t;
+        return size;
     }
 
     public void validateCapacity(){
@@ -26,7 +34,7 @@ public class ArrayList<T> {
     public void resize(){
         Object[] temp = new Object[size*2];
         System.arraycopy(data, 0, temp, 0, data.length);
-        data = temp;
+        data = (T[])temp;
     }
 
     public T get(int index){
@@ -40,6 +48,16 @@ public class ArrayList<T> {
         if(firstIndexOf(t) > -1)
             return  true;
         return false;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public List<T> toList() {
+        return new java.util.ArrayList<>(Arrays.asList((T[])data));
     }
 
     public int firstIndexOf(T t){
@@ -63,6 +81,7 @@ public class ArrayList<T> {
         return index;
     }
 
+    @Override
     public int remove(T t){
         int index = -1;
         for(int i=0; i<size; i++){
@@ -82,6 +101,12 @@ public class ArrayList<T> {
             size--;
         }
         return index;
+    }
+
+    @Override
+    public void clear() {
+        size = 0;
+        data = (T[])new Object[maxCapacity];
     }
 
     public T remove(int index){

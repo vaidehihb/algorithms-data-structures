@@ -37,10 +37,12 @@ public class LinkedList<T> {
         this.count = count;
     }
 
-    public void add(LinkedListNode<T> node){
+
+    public int add(LinkedListNode<T> node){
         node.setNext(this.getHead());
         this.setHead(node);
         this.setCount(this.count + 1);
+        return this.getCount();
     }
 
     public void addAtEnd(LinkedListNode<T> node){
@@ -68,7 +70,7 @@ public class LinkedList<T> {
         return this.count;
     }
 
-    public LinkedListNode deleteAt(int index){
+    public LinkedListNode removeAt(int index){
         LinkedListNode deletedNode;
         if(index > this.count){
             return null;
@@ -96,11 +98,11 @@ public class LinkedList<T> {
         return dummy;
     }
 
-    public LinkedListNode delete(LinkedListNode<T> node){
+    public LinkedListNode<T> remove(LinkedListNode<T> node){
         int index = find(node);
         if(index == -1)
             return null;
-        return deleteAt(index);
+        return removeAt(index);
     }
 
     public int find(LinkedListNode<T> node){
@@ -119,7 +121,7 @@ public class LinkedList<T> {
         return -1;
     }
 
-    public LinkedListNode find(int index){
+    public LinkedListNode<T> find(int index){
         if(index > this.count){
             return null;
         }
