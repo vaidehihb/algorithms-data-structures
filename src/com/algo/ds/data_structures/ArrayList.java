@@ -1,12 +1,9 @@
 package com.algo.ds.data_structures;
 
-import com.algo.ds.data_structures.interfaces.IList;
-
 import java.util.Arrays;
 import java.util.List;
 
-@SuppressWarnings("unchecked")
-public class ArrayList<T> implements IList<T> {
+public class ArrayList<T> {
     private Object[] data;
     private int size = 0;
     private static final int maxCapacity = 10;
@@ -19,7 +16,6 @@ public class ArrayList<T> implements IList<T> {
         this.data = new Object[length];
     }
 
-    @Override
     public int add(T t){
         validateCapacity();
         data[size++] = t;
@@ -50,12 +46,10 @@ public class ArrayList<T> implements IList<T> {
         return false;
     }
 
-    @Override
     public int size() {
         return size;
     }
 
-    @Override
     public List<T> toList() {
         return new java.util.ArrayList<>(Arrays.asList((T[])data));
     }
@@ -81,7 +75,6 @@ public class ArrayList<T> implements IList<T> {
         return index;
     }
 
-    @Override
     public int remove(T t){
         int index = -1;
         for(int i=0; i<size; i++){
@@ -102,8 +95,6 @@ public class ArrayList<T> implements IList<T> {
         }
         return index;
     }
-
-    @Override
     public void clear() {
         size = 0;
         data = (T[])new Object[maxCapacity];

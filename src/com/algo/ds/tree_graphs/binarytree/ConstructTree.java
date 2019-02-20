@@ -1,6 +1,5 @@
 package com.algo.ds.tree_graphs.binarytree;
 
-import com.algo.ds.data_structures.BinaryTree;
 import com.algo.ds.data_structures.BinaryTreeNode;
 
 import java.util.HashMap;
