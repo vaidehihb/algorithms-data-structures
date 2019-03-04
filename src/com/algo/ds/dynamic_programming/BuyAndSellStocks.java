@@ -11,8 +11,4 @@ public class BuyAndSellStocks {
         }
         return maxProfit;
     }
-
-    public static void main(String[] args) {
-        System.out.println(maxProfit(new int[]{7,6,4,3,1}));
-    }
 }
