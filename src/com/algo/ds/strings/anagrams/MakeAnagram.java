@@ -17,7 +17,4 @@ public class MakeAnagram {
         return edits;
     }
 
-    public static void main(String[] args) {
-        System.out.println(solution("brain", "train"));
-    }
 }
