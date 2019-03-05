@@ -20,7 +20,7 @@ public class MedianOfTwoSortedArrays {
 
             if(maxLeft1 <= minRight2 && maxLeft2 <= minRight1){
                 if((l1 + l2) % 2 == 0){
-                    return (double) ((Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2))/2);
+                    return (Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2))/2d;
                 }
                 else{
                     return (double) Math.max(maxLeft1, maxLeft2);
