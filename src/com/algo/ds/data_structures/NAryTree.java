@@ -58,4 +58,19 @@ public class NAryTree<T> {
             levelOrderHelper(child, levelOrderTraversal, level+1);
         }
     }
+
+    public List<String> printAllPaths(NAryTreeNode<T> root){
+        List<String> paths = new ArrayList<>();
+        if(root != null) allPathsHelper(root, "", paths);
+        return paths;
+    }
+
+    private void allPathsHelper(NAryTreeNode<T> root, String path, List<String> paths){
+        if(root.getChildren() == null) paths.add(path + root.getVal());
+        if(root.getChildren() != null){
+            for (NAryTreeNode<T> child: root.getChildren()) {
+                allPathsHelper(child, path + child.getVal() + "->", paths);
+            }
+        }
+    }
 }
