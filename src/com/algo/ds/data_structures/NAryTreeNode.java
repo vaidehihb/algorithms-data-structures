@@ -7,6 +7,7 @@ public class NAryTreeNode<T> {
     private List<NAryTreeNode<T>> children;
 
     public NAryTreeNode() {
+
     }
 
     public NAryTreeNode(T val) {
