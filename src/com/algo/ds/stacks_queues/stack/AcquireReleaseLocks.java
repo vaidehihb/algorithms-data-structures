@@ -1,4 +1,4 @@
-package com.algo.ds.stacks_queues;
+package com.algo.ds.stacks_queues.stack;
 
 import java.util.*;
 
