@@ -33,11 +33,4 @@ public class KLengthSubstringWithOneRepeatingChar {
         }
         return count == 1 && count2 == 0;
     }
-
-    public static void main(String[] args) {
-        KLengthSubstringWithOneRepeatingChar o = new KLengthSubstringWithOneRepeatingChar();
-        String s = "abacaabda";
-        List<String> list = o.getKLengthSubstringsWithOnrRepeatedChar(s,5);
-        list.forEach(s1 -> System.out.println(s1));
-    }
 }
