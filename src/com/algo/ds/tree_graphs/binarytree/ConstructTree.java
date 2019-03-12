@@ -5,7 +5,7 @@ import com.algo.ds.data_structures.BinaryTreeNode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ConstructTree<T> {
+public class ConstructTree<T extends Comparable<T>> {
     public BinaryTreeNode<T> constructFromPostOrderInOrder(T[] inorder, T[] postorder){
         if(inorder == null || postorder == null || inorder.length != postorder.length) return null;
         Map<T,Integer> inorderMap = new HashMap<>();

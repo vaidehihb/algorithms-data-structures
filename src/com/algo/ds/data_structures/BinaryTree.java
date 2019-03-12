@@ -3,7 +3,7 @@ package com.algo.ds.data_structures;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree<T> {
+public class BinaryTree<T extends Comparable<T>> {
     private BinaryTreeNode<T> root;
     private List<T> inOrderTraversal;
     private List<T> preOrderTraversal;
