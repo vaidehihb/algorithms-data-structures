@@ -6,22 +6,26 @@ import java.util.Map;
 public class RomanToInteger {
     public static int romanToInteger(String s){
         if(s == null || s.length() == 0) return 0;
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
+        int[] charMap = new int[91];
+        charMap['I'] =  1;
+        charMap['V'] = 5;
+        charMap['X'] = 10;
+        charMap['L'] = 50;
+        charMap['C'] = 100;
+        charMap['D'] = 500;
+        charMap['M'] = 1000;
         char[] charArray = s.toCharArray();
-        int total = map.get(charArray[0]);
-        int pre = map.get(charArray[0]);
-        for(int i=1; i<charArray.length; i++){
-            int curr = map.get(charArray[i]);
-            if(curr <= pre) total += curr;
-            else total = total + curr - 2 * pre;
-            pre = curr;
+        int total = 0;
+        int next = 0;
+        for(int i=s.length() - 1; i>=0; i--){
+            int curr = charMap[s.charAt(i)];
+            if(curr >= next){
+                total += curr;
+                next = curr;
+            }
+            else{
+                total -= curr;
+            }
         }
         return total;
     }
