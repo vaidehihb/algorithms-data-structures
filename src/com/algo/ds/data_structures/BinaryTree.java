@@ -90,6 +90,21 @@ public class BinaryTree<T extends Comparable<T>> {
         levelOrderHelper(node.getRight(), level+1);
     }
 
+    public List<List<T>> zigZagLevelOrderTraversal(BinaryTreeNode<T> node){
+        List<List<T>> zigZagLevelOrderTraversal = new ArrayList<>();
+        zigZagLevelOrderHelper(node, 0, zigZagLevelOrderTraversal);
+        return zigZagLevelOrderTraversal;
+    }
+
+    private void zigZagLevelOrderHelper(BinaryTreeNode<T> node, int level, List<List<T>> zigZagLevelOrderTraversal){
+        if(node == null) return;
+        if(zigZagLevelOrderTraversal.size() <= level) zigZagLevelOrderTraversal.add(new ArrayList<>());
+        if(level % 2 == 0) zigZagLevelOrderTraversal.get(level).add(node.getVal());
+        else zigZagLevelOrderTraversal.get(level).add(0,node.getVal());
+        zigZagLevelOrderHelper(root.getLeft(), level+1, zigZagLevelOrderTraversal);
+        zigZagLevelOrderHelper(root.getRight(), level+1, zigZagLevelOrderTraversal);
+    }
+
     public boolean isSymmetric(BinaryTreeNode<T> node){
         if(node == null) return true;
         return isSymmetricHelper(node.getLeft(), node.getRight());
@@ -110,6 +125,20 @@ public class BinaryTree<T extends Comparable<T>> {
         if(node.getLeft() == null && root.getRight() == null) return localSum + node.getVal() == sum;
 
         return pathSumHelper(node.getLeft(), localSum + node.getVal(), sum) || pathSumHelper(node.getRight(), localSum + node.getVal(), sum);
+    }
+
+    public BinaryTreeNode<T> mirrorTree(BinaryTreeNode<T> node){
+        mirrorHelper(node);
+        return node;
+    }
+
+    private void mirrorHelper(BinaryTreeNode<T> node) {
+        if(node == null) return;
+        BinaryTreeNode<T> temp = node.getLeft();
+        node.setLeft(node.getRight());
+        node.setRight(temp);
+        mirrorHelper(node.getLeft());
+        mirrorHelper(node.getRight());
     }
 
 
