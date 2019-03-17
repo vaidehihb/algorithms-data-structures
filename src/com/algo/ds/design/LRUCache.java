@@ -17,7 +17,7 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
     }
 
     public void put(int key, int val){
-        super.putIfAbsent(key, val);
+        super.put(key, val);
     }
 
     @Override
