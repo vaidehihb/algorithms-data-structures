@@ -107,8 +107,8 @@ public class YoungTableau {
 //    }
 
     private static int[][] initializeTableau(int length){
-        int m = (int)Math.sqrt(length);
-        int n = length/m + length % m;
+        int n = (int)Math.sqrt(length);
+        int m = (n * n == length) ? n : n+1;
         System.out.println(m + ":" + n);
         int[][] tableau = new int[m][n];
         for(int i=0; i<m; i++){
@@ -121,7 +121,7 @@ public class YoungTableau {
 
     public static void main(String args[]) {
 
-        int[] arr = {9, 16, 3, 2, 4, 8, 5, 14, 12};
+        int[] arr = {9, 18, 3, 2, 4, 8, 5, 14, 12};
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             max = Math.max(max, arr[i]);
