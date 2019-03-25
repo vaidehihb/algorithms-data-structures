@@ -5,7 +5,8 @@ import java.util.Arrays;
 // number of ways
 public class CoinChange2 {
     public int change(int[] coins, int amount){
-        if(coins == null || coins.length == 0 || amount == 0) return 0;
+        if(amount == 0) return 1;
+        if(coins == null || coins.length == 0) return 0;
         int[] ways = new int[amount + 1];
         ways[0] = 1;
         for(int coin:coins) {
