@@ -1,5 +1,6 @@
 package com.algo.ds.backtracking;
 
+// word serach in 4 directions. Can be extended for 8 by adding more directions in dirs array
 public class WordSerachIn2DGrid {
     private int[][] dirs = new int[][]{
             {1,0},
