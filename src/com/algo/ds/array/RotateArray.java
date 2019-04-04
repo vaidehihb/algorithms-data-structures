@@ -24,11 +24,4 @@ public class RotateArray {
             nums[r--] = temp;
         }
     }
-
-    public static void main(String[] args) {
-        RotateArray r = new RotateArray();
-        int[] arr = {1,2,3,4,5,6,7};
-        r.rotateRight(arr, 3);
-        for (int i:arr) System.out.println(i);
-    }
 }
